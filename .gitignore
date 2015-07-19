@@ -1,2 +1,5 @@
 .vagrant
+public/wp-config-local.php
+public/wp-content/languages/*
+public/wp-content/themes/twenty*
 puppet/hiera/common.yaml
