@@ -1,6 +1,6 @@
 host { 'dgob.dev':
   ip           => '192.168.33.10',
-  host_aliases => [],
+  host_aliases => ['db.dev'],
 }
 
 class { 'apt':
@@ -42,6 +42,12 @@ apache::vhost { 'dgob.dev':
   ],
 }
 
+apache::vhost { 'db.dev':
+  servername    => 'db.dev',
+  port          => '80',
+  docroot       => '/var/www/adminer',
+}
+
 php::module { 'xdebug': }
 php::module { 'mysql': }
 php::module { 'gd': }
@@ -64,12 +70,19 @@ php::augeas {
     value  => 'Europe/Berlin';
 }
 
-class { 'mysql::server':
-  override_options => {
-    'mysqld' => {
-      'bind-address' => '0.0.0.0',
-    }
-  }
-}
+class { 'mysql::server': }
 
 create_resources('mysql::db', hiera_hash('databases'))
+
+file { '/var/www/adminer':
+  ensure => directory,
+  mode   => 755,
+  owner  => 'www-data',
+  group  => 'www-data',
+}
+
+exec { 'Download Adminer':
+  command => '/usr/bin/wget http://www.adminer.org/latest.php -O /var/www/adminer/index.php',
+  require => File['/var/www/adminer'],
+  creates => '/var/www/adminer/index.php',
+}
