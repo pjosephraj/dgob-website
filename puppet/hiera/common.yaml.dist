@@ -1,0 +1,10 @@
+---
+
+mysql::server::root_password:
+
+databases:
+  dgob:
+    user: dgob
+    password:
+    host: localhost
+    grant: ALL
