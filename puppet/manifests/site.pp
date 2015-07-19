@@ -1,6 +1,6 @@
 host { 'dgob.dev':
   ip           => '192.168.33.10',
-  host_aliases => ['db.dev'],
+  host_aliases => ['db.dev', 'mail.dev'],
 }
 
 class { 'apt':
@@ -31,7 +31,8 @@ apache::vhost { 'dgob.dev':
     'xdebug.max_nesting_level 400',
     'xdebug.remote_enable 1',
     'xdebug.remote_connect_back 1',
-    'xdebug.remote_port 9000'
+    'xdebug.remote_port 9000',
+    'sendmail_path "/usr/bin/env catchmail -f mail@dgob.dev"',
   ],
   setenv           => [],
   directories      => [
@@ -46,6 +47,16 @@ apache::vhost { 'db.dev':
   servername    => 'db.dev',
   port          => '80',
   docroot       => '/var/www/adminer',
+}
+
+apache::vhost { 'mail.dev':
+  servername => 'mail.dev',
+  port       => 80,
+  docroot    => '/var/www',
+  proxy_pass => [{
+    'path' => '/',
+    'url' => 'http://localhost:1080/'
+  }],
 }
 
 php::module { 'xdebug': }
@@ -86,3 +97,5 @@ exec { 'Download Adminer':
   require => File['/var/www/adminer'],
   creates => '/var/www/adminer/index.php',
 }
+
+class { 'mailcatcher': }
