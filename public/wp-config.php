@@ -35,6 +35,12 @@ define( 'WP_HOME', DGOB_PROTOCOL . $_SERVER['HTTP_HOST'] );
 define( 'WP_CONTENT_DIR', __DIR__ . '/wp-content' );
 define( 'WP_CONTENT_URL', DGOB_PROTOCOL . $_SERVER['HTTP_HOST'] . '/wp-content' );
 
+/**
+ * Workaround to disable PHP notice, see https://core.trac.wordpress.org/ticket/32118
+ * To be removed when WordPress version 4.2.3 is used.
+ */
+define('SCRIPT_DEBUG', false);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
