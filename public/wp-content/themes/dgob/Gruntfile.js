@@ -19,6 +19,9 @@ module.exports = function (grunt) {
 				browser: true,
 				globals: {}
 			},
+			dist: {
+				src: 'scripts/**/*.js'
+			},
 			gruntfile: {
 				src: 'Gruntfile.js'
 			}
@@ -29,8 +32,12 @@ module.exports = function (grunt) {
 				tasks: ['sass']
 			},
 			gruntfile: {
-				files: '<%= jshint.gruntfile.src %>',
-				tasks: ['jshint:gruntfile', 'sass']
+				files: ['Gruntfile.js'],
+				tasks: ['jshint:gruntfile', 'concat', 'sass']
+			},
+			scripts: {
+				files: ['scripts/**/*.js'],
+				tasks: ['jshint:dist', 'concat']
 			}
 		},
 		sass: {
@@ -46,15 +53,43 @@ module.exports = function (grunt) {
 					ext: '.css'
 				}]
 			}
+		},
+		copy: {
+			fonts: {
+				files: [{
+					expand: true,
+					cwd: '<%= pkg.paths.bootstrap %>/assets/fonts/',
+					src: ['**'],
+					dest: 'fonts/'
+				}]
+			}
+		},
+		concat: {
+			options: {
+				sourceMap: true
+			},
+			dist: {
+				src: [
+					'<%= pkg.paths.jquery %>/dist/jquery.js',
+					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/transition.js',
+					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/collapse.js',
+					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/dropdown.js'
+				],
+				dest: 'scripts.js'
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 	grunt.registerTask('default', [
 		'jshint',
+		'copy',
+		'concat',
 		'sass'
 	]);
 

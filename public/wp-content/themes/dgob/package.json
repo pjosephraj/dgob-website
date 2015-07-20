@@ -4,8 +4,14 @@
   },
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "~0.5.3"
+  },
+  "paths": {
+    "bootstrap": "bower_components/bootstrap-sass-official",
+    "jquery": "bower_components/jquery"
   }
 }
