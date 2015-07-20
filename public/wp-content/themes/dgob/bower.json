@@ -1,0 +1,20 @@
+{
+  "name": "dgob-wp-theme",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dgob/dgob-website",
+  "authors": [
+    "Bastian Bräu <bastian@braeu.me>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.3.5"
+  }
+}

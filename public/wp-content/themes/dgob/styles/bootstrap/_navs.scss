@@ -1,0 +1,11 @@
+.nav-pills {
+	background: $gray-lighter;
+
+	a {
+		color: $gray-dark;
+
+		small {
+			display: block;
+		}
+	}
+}

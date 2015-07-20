@@ -1,0 +1,11 @@
+@media (min-width: $screen-sm-min) {
+
+	.navbar-collapse { // This is required for specifity reasons
+		.container > &,
+		.container-fluid > & {
+			// Title is not visible, so we reset indentation for correct spacing
+			margin-left: -15px;
+		}
+	}
+
+}
