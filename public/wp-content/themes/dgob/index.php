@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-Hallo DGoB!
+	Hallo DGoB!
 
 <?php get_footer(); ?>

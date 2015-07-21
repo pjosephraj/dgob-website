@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
@@ -12,7 +12,7 @@
 
 <body <?php body_class(); ?>>
 
-<header>
+<header class="page">
 	<div class="container-fluid clearfix visible-sm-block visible-md-block visible-lg-block">
 		<form class="search pull-right">
 			<div class="input-group">
@@ -57,3 +57,5 @@
 		</div>
 	</nav>
 </header>
+
+<div class="container-fluid">

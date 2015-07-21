@@ -1,0 +1,22 @@
+footer.page {
+
+	hr {
+		margin: 2em 0 1em;
+	}
+
+	ul.legal-menu {
+		display: inline;
+		padding: 0;
+
+		li {
+			display: inline;
+
+			&:before {
+				content: '|';
+				display: inline-block;
+				padding: 0 0.5em;
+			}
+		}
+	}
+
+}
