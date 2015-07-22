@@ -1,3 +1,7 @@
+class { 'locales':
+  locales   => ['de_DE.UTF-8'],
+}
+
 host { 'dgob.dev':
   ip           => '192.168.33.10',
   host_aliases => ['db.dev', 'mail.dev'],

@@ -1,3 +1,6 @@
 [submodule "public/wp"]
 	path = public/wp
 	url = https://github.com/WordPress/WordPress.git
+[submodule "data/wpie"]
+	path = data/wpie
+	url = https://github.com/b263/wpie.git

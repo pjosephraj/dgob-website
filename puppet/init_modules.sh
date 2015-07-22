@@ -1,5 +1,6 @@
 #!/bin/bash
 
+test -d /etc/puppet/modules/locales     || puppet module install saz-locales
 test -d /etc/puppet/modules/apt         || puppet module install puppetlabs-apt
 test -d /etc/puppet/modules/apache      || puppet module install puppetlabs-apache
 test -d /etc/puppet/modules/php         || puppet module install example42-php
