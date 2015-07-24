@@ -13148,8 +13148,16 @@ $(function () {
 
 	'use strict';
 
-	var map = new GMaps({
-		el: '#game-evenings-map',
+	var selector = '#game-evenings-map',
+		map;
+
+	// Stop here if map container is not present on this page
+	if ($(selector).length < 1) {
+		return;
+	}
+
+	map = new GMaps({
+		el: selector,
 		lng: 10.4515260,
 		lat: 51.1656910,
 		zoom: 6,
