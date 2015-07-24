@@ -15,6 +15,7 @@
     "bootstrap": "bower_components/bootstrap-sass-official",
     "gmaps": "bower_components/gmaps",
     "clusterer": "bower_components/js-marker-clusterer",
-    "jquery": "bower_components/jquery"
+    "jquery": "bower_components/jquery",
+    "wgo": "../../plugins/go-baduk-weiqi/wgo"
   }
 }
