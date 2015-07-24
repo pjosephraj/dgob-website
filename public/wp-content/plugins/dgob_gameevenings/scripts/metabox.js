@@ -2,11 +2,18 @@
 
 	'use strict';
 
-	var map;
+	var selector = '#metabox-map',
+		map;
 
 	$(function () {
+
+		// Stop here if map container is not present on this page
+		if ($(selector).length < 1) {
+			return;
+		}
+
 		map = new GMaps({
-			el: '#metabox-map',
+			el: selector,
 			lng: 10.4515260,
 			lat: 51.1656910,
 			zoom: 4,
