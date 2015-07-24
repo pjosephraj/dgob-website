@@ -12,6 +12,8 @@
   },
   "paths": {
     "bootstrap": "bower_components/bootstrap-sass-official",
+    "gmaps": "bower_components/gmaps",
+    "clusterer": "bower_components/js-marker-clusterer",
     "jquery": "bower_components/jquery"
   }
 }
