@@ -31,11 +31,11 @@ module.exports = function (grunt) {
 		watch: {
 			sass: {
 				files: ['styles/**/*.scss'],
-				tasks: ['sass']
+				tasks: ['css']
 			},
 			gruntfile: {
 				files: ['Gruntfile.js'],
-				tasks: ['jshint:gruntfile', 'concat', 'sass']
+				tasks: ['jshint:gruntfile', 'concat', 'css']
 			},
 			scripts: {
 				files: ['scripts/**/*.js'],
@@ -45,15 +45,26 @@ module.exports = function (grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'expanded'
+					style: 'expanded',
+					sourcemap: 'none'
 				},
 				files: [{
 					expand: true,
 					cwd: 'styles',
 					src: ['*.scss'],
-					dest: '.',
+					dest: '.tmp',
 					ext: '.css'
 				}]
+			}
+		},
+		cssmin: {
+			dist: {
+				files: {
+					'style.css': [
+						'.tmp/style.css',
+						'../../plugins/go-baduk-weiqi/wgo/wgo.player.css'
+					]
+				}
 			}
 		},
 		copy: {
@@ -90,12 +101,18 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	grunt.registerTask('css', [
+		'sass',
+		'cssmin'
+	]);
 
 	grunt.registerTask('default', [
 		'jshint',
 		'copy',
 		'concat',
-		'sass'
+		'css'
 	]);
 
 };

@@ -4,3 +4,6 @@
 [submodule "data/wpie"]
 	path = data/wpie
 	url = https://github.com/b263/wpie.git
+[submodule "public/wp-content/plugins/go-baduk-weiqi"]
+	path = public/wp-content/plugins/go-baduk-weiqi
+	url = https://github.com/b263/Go-for-WordPress.git
