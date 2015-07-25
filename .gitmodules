@@ -7,3 +7,6 @@
 [submodule "public/wp-content/plugins/go-baduk-weiqi"]
 	path = public/wp-content/plugins/go-baduk-weiqi
 	url = https://github.com/b263/Go-for-WordPress.git
+[submodule "public/wp-content/plugins/wp-password-policy-manager"]
+	path = public/wp-content/plugins/wp-password-policy-manager
+	url = https://github.com/b263/wp-password-policy-manager.git
