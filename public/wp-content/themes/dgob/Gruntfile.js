@@ -62,7 +62,7 @@ module.exports = function (grunt) {
 				files: {
 					'style.css': [
 						'.tmp/style.css',
-						'<%= pkg.paths.wgo %>/wgo.player.css'
+						'<%= pkg.paths.wgo %>/wgo/wgo.player.css'
 					]
 				}
 			}
@@ -90,8 +90,8 @@ module.exports = function (grunt) {
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/collapse.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/dropdown.js',
 					'scripts/game-evenings.js',
-					'<%= pkg.paths.wgo %>/wgo.min.js',
-					'<%= pkg.paths.wgo %>/wgo.player.min.js',
+					'<%= pkg.paths.wgo %>/wgo/wgo.min.js',
+					'<%= pkg.paths.wgo %>/wgo/wgo.player.min.js',
 					'<%= pkg.paths.wgo %>/i18n/i18n.de.js'
 				],
 				dest: 'scripts.js'
