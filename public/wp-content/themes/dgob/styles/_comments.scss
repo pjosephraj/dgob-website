@@ -1,0 +1,38 @@
+.comment-list {
+	list-style: none;
+	padding-left: 0;
+
+	ol {
+		list-style: none;
+		padding-left: 2em;
+	}
+
+	.comment-body {
+		border-bottom: 1px solid $hr-border;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+.comment-respond {
+
+	#comment {
+		display: block;
+		width: 100%;
+	}
+
+	.comment-form {
+
+		label {
+			display: inline-block;
+			width: 120px;
+		}
+
+	}
+
+	.form-allowed-tags {
+		font-size: $font-size-small;
+		color: $gray-light;
+	}
+
+}

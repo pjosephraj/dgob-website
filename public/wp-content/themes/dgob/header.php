@@ -16,12 +16,14 @@
 	<div class="container-fluid clearfix visible-sm-block visible-md-block visible-lg-block">
 		<form class="search pull-right">
 			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Suche">
-				<span class="input-group-addon">
-					<button type="submit">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
+				<form method="GET" action="/">
+					<input type="text" class="form-control" name="s" placeholder="Suche">
+					<span class="input-group-addon">
+						<button type="submit">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</form>
 			</div>
 		</form>
 		<div class="logo">

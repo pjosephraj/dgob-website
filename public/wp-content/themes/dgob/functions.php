@@ -14,11 +14,11 @@ register_nav_menu( 'footer', 'Footer-Navigation' );
 /**
  * Theme setup
  */
-function dgob_theme_setup() {
+add_action( 'after_setup_theme', function () {
 	add_editor_style( array(
 		'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400&#44;600&#44;700',
 		'style.css'
 	) );
-}
 
-add_action( 'after_setup_theme', 'dgob_theme_setup' );
+	add_theme_support( 'title-tag' );
+} );
