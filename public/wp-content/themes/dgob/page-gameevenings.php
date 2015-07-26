@@ -11,7 +11,7 @@ echo '<ul class="hidden">';
 
 $query = new WP_Query( array(
 	'post_type' => 'game_evening',
-	'nopaging' => true
+	'nopaging' => true,
 ) );
 
 while ( $query->have_posts() ) {
@@ -22,10 +22,10 @@ while ( $query->have_posts() ) {
 	$zip = get_post_meta( $post->ID, '_zip', true );
 	$city = get_post_meta( $post->ID, '_city', true );
 	$addition = get_post_meta( $post->ID, '_addition', true );
-	$addition = ($addition === '') ? '' : '<br>' . $addition;
+	$addition = ( '' === $addition ) ? '' : '<br>' . $addition;
 	printf( '<li class="game-evening-item" data-latitude="%s" data-longitude="%s">', $latitude, $longitude );
 	the_title( '<h4>', '</h4>' );
-	printf('<p>%s<br>%s %s%s</p>', $street, $zip, $city, $addition);
+	printf( '<p>%s<br>%s %s%s</p>', $street, $zip, $city, $addition );
 	the_content();
 	echo '</li>';
 }

@@ -20,7 +20,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 /**
  * Environment specific settings
  */
-if ( substr($_SERVER['REMOTE_ADDR'], 0, 7) === '192.168' ) {
+if ( substr( $_SERVER['REMOTE_ADDR'], 0, 7 ) === '192.168' ) {
 	define( 'WP_DEBUG', true );
 	define( 'DGOB_PROTOCOL', 'http://' );
 } else {
@@ -39,13 +39,14 @@ define( 'WP_CONTENT_URL', DGOB_PROTOCOL . $_SERVER['HTTP_HOST'] . '/wp-content' 
  * Workaround to disable PHP notice, see https://core.trac.wordpress.org/ticket/32118
  * To be removed when WordPress version 4.2.3 is used.
  */
-define('SCRIPT_DEBUG', false);
+define( 'SCRIPT_DEBUG', false );
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined( 'ABSPATH' ) )
+if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
+}
 
 /** Sets up WordPress vars and included files. */
 require_once( ABSPATH . '/wp-settings.php' );

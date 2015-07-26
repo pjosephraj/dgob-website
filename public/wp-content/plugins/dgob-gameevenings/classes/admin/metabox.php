@@ -10,7 +10,7 @@ class MetaBox {
 		'city',
 		'addition',
 		'latitude',
-		'longitude'
+		'longitude',
 	);
 
 	public function __construct() {
@@ -34,7 +34,7 @@ class MetaBox {
 		$postId = get_the_ID();
 		$data = array();
 		foreach ( $this->fields as $field ) {
-			$data[$field] = get_post_meta( $postId, '_' . $field, true );
+			$data[ $field ] = get_post_meta( $postId, '_' . $field, true );
 		}
 		wp_nonce_field( 'gameevening_save_meta_box_data', 'gameevening_meta_box_nonce' );
 		echo <<<EOS
@@ -51,7 +51,7 @@ EOS;
 	public function add_scripts() {
 		global $post_type;
 		$plugin_root = plugin_dir_url( dirname( __DIR__ ) );
-		if ( $post_type === 'game_evening' ) {
+		if ( 'game_evening' === $post_type ) {
 			wp_enqueue_script(
 				'gameevenings-google-maps',
 				'http://maps.google.com/maps/api/js?sensor=true'
@@ -70,11 +70,11 @@ EOS;
 	}
 
 	public function save_post( $post_ID ) {
-		if ( !isset( $_POST['gameevening_meta_box_nonce'] ) ) {
+		if ( ! isset( $_POST['gameevening_meta_box_nonce'] ) ) {
 			return;
 		}
 
-		if ( !wp_verify_nonce( $_POST['gameevening_meta_box_nonce'], 'gameevening_save_meta_box_data' ) ) {
+		if ( ! wp_verify_nonce( $_POST['gameevening_meta_box_nonce'], 'gameevening_save_meta_box_data' ) ) {
 			return;
 		}
 
@@ -82,12 +82,12 @@ EOS;
 			return;
 		}
 
-		if ( !current_user_can( 'edit_post', $post_ID ) ) {
+		if ( ! current_user_can( 'edit_post', $post_ID ) ) {
 			return;
 		}
 
 		foreach ( $this->fields as $field ) {
-			update_post_meta( $post_ID, '_' . $field, sanitize_text_field( $_POST[$field] ), false );
+			update_post_meta( $post_ID, '_' . $field, sanitize_text_field( $_POST[ $field ] ), false );
 		}
 	}
 

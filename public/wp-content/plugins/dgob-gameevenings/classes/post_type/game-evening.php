@@ -31,7 +31,7 @@ class GameEvening {
 		$args = array(
 			'label' => 'game_evening',
 			'labels' => $labels,
-			'supports' => array( 'title', 'editor', ),
+			'supports' => array( 'title', 'editor' ),
 			'taxonomies' => array( 'category', 'post_tag' ),
 			'hierarchical' => false,
 			'public' => false,
@@ -49,6 +49,5 @@ class GameEvening {
 
 		register_post_type( 'game_evening', $args );
 	}
-
 
 }

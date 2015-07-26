@@ -4,7 +4,7 @@
  * Plugin Name: DGoB Spielabende
  */
 
-require_once 'classes/post_type/game_evening.php';
+require_once 'classes/post_type/game-evening.php';
 new Dgob\GameEvenings\PostType\GameEvening();
 
 if ( is_admin() ) {

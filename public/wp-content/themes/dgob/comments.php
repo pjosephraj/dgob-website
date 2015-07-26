@@ -29,7 +29,7 @@ if ( post_password_required() ) {
 
 			<?php
 			// Does this post have comments, but commenting is currently disabled?
-			if ( !comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+			if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 				?>
 				<p class="no-comments">Kommentieren ist nicht mehr möglich</p>
 			<?php endif; ?>
