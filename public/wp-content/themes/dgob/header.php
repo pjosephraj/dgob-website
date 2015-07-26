@@ -1,3 +1,4 @@
+<?php require_once( __DIR__ . '/vendor/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php' ); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 
