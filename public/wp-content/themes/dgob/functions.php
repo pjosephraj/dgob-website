@@ -25,14 +25,14 @@ add_action( 'after_setup_theme', function () {
  */
 add_action( 'widgets_init', function () {
 	register_sidebar( array(
-		'name' => 'Footer',
-		'id' => 'footer',
-		'description' => 'Widgets im Footerbereich',
-		'class' => null,
+		'name'          => 'Footer',
+		'id'            => 'footer',
+		'description'   => 'Widgets im Footerbereich',
+		'class'         => null,
 		'before_widget' => '<div id="%1$s" class="col-sm-3 widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h5>',
-		'after_title' => '</h5>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );
 } );
 
@@ -54,6 +54,7 @@ add_filter( 'oembed_result', function ( $data ) {
 		$data = preg_replace( '/(width|height)="[^"]+"/i', '', $data );
 		$data = sprintf( '<div class="responsive-embed">%s</div>', $data );
 	}
+
 	return $data;
 } );
 
@@ -70,4 +71,43 @@ function dgob_timestamped_url( $file ) {
 		$file,
 		filemtime( $local_path )
 	);
+}
+
+
+/**
+ * Print the main menu
+ */
+function dgob_main_menu() {
+	$key  = 'dgob_main_menu';
+	$menu = get_transient( $key );
+	if ( false === $menu ) {
+		require_once __DIR__ . '/vendor/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php';
+		$menu = wp_nav_menu( array(
+			'theme_location' => 'primary',
+			'container'      => false,
+			'menu_class'     => 'nav navbar-nav',
+			'walker'         => new wp_bootstrap_navwalker(),
+			'depth'          => 2,
+			'echo'           => false,
+		) );
+		set_transient( $key, $menu, HOUR_IN_SECONDS );
+	}
+	echo $menu;
+}
+
+
+/**
+ * Print the footer
+ */
+function dgob_footer() {
+	$key    = 'dgob_footer_sidebar';
+	$footer = get_transient( $key );
+	if ( false === $footer ) {
+		ob_start();
+		get_sidebar( 'footer' );
+		$footer = ob_get_contents();
+		ob_end_clean();
+		set_transient( $key, $footer, MINUTE_IN_SECONDS );
+	}
+	echo $footer;
 }

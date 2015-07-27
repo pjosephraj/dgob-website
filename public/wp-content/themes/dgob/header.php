@@ -1,4 +1,3 @@
-<?php require_once( __DIR__ . '/vendor/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php' ); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 
@@ -47,15 +46,7 @@
 					<a href="/" class="navbar-brand visible-xs-inline">Deutscher Go-Bund</a>
 				</div>
 				<div id="nav-main-collapse" class="collapse navbar-collapse">
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'container' => false,
-						'menu_class' => 'nav navbar-nav',
-						'walker' => new wp_bootstrap_navwalker(),
-						'depth' => 2,
-					) );
-					?>
+					<?php dgob_main_menu(); ?>
 				</div>
 			</div>
 		</nav>

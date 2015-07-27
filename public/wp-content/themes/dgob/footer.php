@@ -4,7 +4,7 @@
 	<footer class="page">
 		<div class="footer-line"></div>
 		<div class="container-fluid">
-			<?php get_sidebar( 'footer' ); ?>
+			<?php dgob_footer(); ?>
 		</div>
 	</footer>
 
