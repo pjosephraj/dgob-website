@@ -13,52 +13,53 @@
 
 <body <?php body_class(); ?>>
 
-<header class="page">
-	<div class="container-fluid clearfix visible-sm-block visible-md-block visible-lg-block">
-		<form class="search pull-right">
-			<div class="input-group">
-				<form method="GET" action="/">
+<div id="page-wrapper">
+
+	<header class="page">
+		<div class="container-fluid clearfix visible-sm-block visible-md-block visible-lg-block">
+			<form class="search pull-right" method="GET" action="/">
+				<div class="input-group">
 					<input type="text" class="form-control" name="s" placeholder="Suche">
 					<span class="input-group-addon">
 						<button type="submit">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
 					</span>
-				</form>
+				</div>
+			</form>
+			<div class="logo">
+				<a href="/">
+					<img src="<?php bloginfo( 'template_url' ); ?>/images/logo.svg" alt="Logo des Deutschen Go-Bunds">
+				</a>
 			</div>
-		</form>
-		<div class="logo">
-			<a href="/">
-				<img src="<?php bloginfo( 'template_url' ); ?>/images/logo.svg" alt="Logo des Deutschen Go-Bunds">
-			</a>
+			<div class="dgob">Deutscher Go-Bund</div>
 		</div>
-		<div class="dgob">Deutscher Go-Bund</div>
-	</div>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-						data-target="#nav-main-collapse" aria-expanded="false">
-					<span class="sr-only">Navigation umschalten</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="/" class="navbar-brand visible-xs-inline">Deutscher Go-Bund</a>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#nav-main-collapse" aria-expanded="false">
+						<span class="sr-only">Navigation umschalten</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand visible-xs-inline">Deutscher Go-Bund</a>
+				</div>
+				<div id="nav-main-collapse" class="collapse navbar-collapse">
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'container' => false,
+						'menu_class' => 'nav navbar-nav',
+						'walker' => new wp_bootstrap_navwalker(),
+						'depth' => 2,
+					) );
+					?>
+				</div>
 			</div>
-			<div id="nav-main-collapse" class="collapse navbar-collapse">
-				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'container' => false,
-					'menu_class' => 'nav navbar-nav',
-					'walker' => new wp_bootstrap_navwalker(),
-					'depth' => 2,
-				) );
-				?>
-			</div>
-		</div>
-	</nav>
-</header>
+		</nav>
+	</header>
 
-<div class="container-fluid">
+	<div id="main-content">
+		<div class="container-fluid">

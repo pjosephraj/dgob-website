@@ -6,6 +6,7 @@
 register_nav_menu( 'primary', 'Haupt-Navigation' );
 register_nav_menu( 'footer', 'Footer-Navigation' );
 
+
 /**
  * Theme setup
  */
@@ -17,6 +18,24 @@ add_action( 'after_setup_theme', function () {
 
 	add_theme_support( 'title-tag' );
 } );
+
+
+/**
+ * Footer sidebar
+ */
+add_action( 'widgets_init', function () {
+	register_sidebar( array(
+		'name' => 'Footer',
+		'id' => 'footer',
+		'description' => 'Widgets im Footerbereich',
+		'class' => null,
+		'before_widget' => '<div id="%1$s" class="col-sm-3 widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h5>',
+		'after_title' => '</h5>',
+	) );
+} );
+
 
 /**
  * Responsive embeds
