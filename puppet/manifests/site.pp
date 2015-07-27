@@ -4,7 +4,7 @@ class { 'locales':
 
 host { 'dgob.dev':
   ip           => '192.168.33.10',
-  host_aliases => ['db.dev', 'mail.dev'],
+  host_aliases => ['db.dev', 'mail.dev', 'webgrind.dev'],
 }
 
 class { 'apt':
@@ -13,6 +13,21 @@ class { 'apt':
   }
 }
 
+
+#####################
+# Webgrind          #
+#####################
+class { 'webgrind': }
+
+file { '/var/www/webgrind':
+  ensure => 'link',
+  target => '/usr/share/php/webgrind/source',
+}
+
+
+#####################
+# Apache            #
+#####################
 class { 'apache':
   default_vhost => false,
   default_mods  => true,
@@ -22,6 +37,10 @@ class { 'apache':
 include apache::mod::rewrite
 include apache::mod::php
 
+
+#####################
+# vHosts            #
+#####################
 apache::vhost { 'dgob.dev':
   default_vhost    => true,
   servername       => 'dgob.dev',
@@ -36,6 +55,8 @@ apache::vhost { 'dgob.dev':
     'xdebug.remote_enable 1',
     'xdebug.remote_connect_back 1',
     'xdebug.remote_port 9000',
+    'xdebug.profiler_enable_trigger 1',
+    'xdebug.profiler_output_dir /tmp',
     'sendmail_path "/usr/bin/env catchmail -f mail@dgob.dev"',
   ],
   setenv           => [],
@@ -63,6 +84,16 @@ apache::vhost { 'mail.dev':
   }],
 }
 
+apache::vhost { 'webgrind.dev':
+  servername    => 'webgrind.dev',
+  port          => '80',
+  docroot       => '/var/www/webgrind',
+}
+
+
+#####################
+# PHP               #
+#####################
 php::module { 'xdebug': }
 php::module { 'mysql': }
 php::module { 'gd': }
@@ -85,10 +116,18 @@ php::augeas {
     value  => 'Europe/Berlin';
 }
 
+
+#####################
+# MySQL             #
+#####################
 class { 'mysql::server': }
 
 create_resources('mysql::db', hiera_hash('databases'))
 
+
+#####################
+# Adminer           #
+#####################
 file { '/var/www/adminer':
   ensure => directory,
   mode   => 755,
@@ -102,4 +141,8 @@ exec { 'Download Adminer':
   creates => '/var/www/adminer/index.php',
 }
 
+
+#####################
+# Mailcatcher       #
+#####################
 class { 'mailcatcher': }

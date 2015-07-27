@@ -10,3 +10,6 @@
 [submodule "public/wp-content/plugins/wp-password-policy-manager"]
 	path = public/wp-content/plugins/wp-password-policy-manager
 	url = https://github.com/b263/wp-password-policy-manager.git
+[submodule "puppet/modules/webgrind"]
+	path = puppet/modules/webgrind
+	url = https://github.com/b263/puppet-webgrind.git
