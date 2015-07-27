@@ -1,0 +1,8 @@
+languages:
+  Ruby: false
+  JavaScript: true
+  PHP: true
+  Python: false
+exclude_paths:
+- "public/wp-content/themes/dgob/scripts.js"
+- "public/wp-content/themes/dgob/vendor/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php"
