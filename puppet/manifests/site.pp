@@ -36,6 +36,7 @@ class { 'apache':
 
 include apache::mod::rewrite
 include apache::mod::expires
+include apache::mod::headers
 include apache::mod::php
 
 
