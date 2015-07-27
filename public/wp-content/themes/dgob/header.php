@@ -6,8 +6,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="<?php dgob_timestamped_url( 'style.css' ); ?>">
 	<?php wp_head(); ?>
 </head>
 
@@ -29,7 +29,7 @@
 			</form>
 			<div class="logo">
 				<a href="/">
-					<img src="<?php bloginfo( 'template_url' ); ?>/images/logo.svg" alt="Logo des Deutschen Go-Bunds">
+					<img src="<?php dgob_timestamped_url( 'images/logo.svg' ); ?>" alt="Logo des Deutschen Go-Bunds">
 				</a>
 			</div>
 			<div class="dgob">Deutscher Go-Bund</div>

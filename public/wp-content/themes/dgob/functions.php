@@ -56,3 +56,18 @@ add_filter( 'oembed_result', function ( $data ) {
 	}
 	return $data;
 } );
+
+/**
+ * Prints the URL of a file appended by a timestamp parameter.
+ *
+ * @param string $file The local path relative to the theme directory
+ */
+function dgob_timestamped_url( $file ) {
+	$local_path = get_stylesheet_directory() . '/' . $file;
+	printf(
+		'%s/%s?%s',
+		get_stylesheet_directory_uri(),
+		$file,
+		filemtime( $local_path )
+	);
+}
