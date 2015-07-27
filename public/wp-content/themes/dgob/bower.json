@@ -16,7 +16,6 @@
   ],
   "devDependencies": {
     "bootstrap-sass-official": "~3.3.5",
-    "gmaps": "~0.4.18",
     "js-marker-clusterer": "*"
   }
 }

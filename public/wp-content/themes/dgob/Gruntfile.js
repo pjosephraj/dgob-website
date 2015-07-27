@@ -84,7 +84,6 @@ module.exports = function (grunt) {
 			dist: {
 				src: [
 					'<%= pkg.paths.jquery %>/dist/jquery.js',
-					'<%= pkg.paths.gmaps %>/gmaps.js',
 					'<%= pkg.paths.clusterer %>/src/markerclusterer.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/transition.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/collapse.js',

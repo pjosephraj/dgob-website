@@ -32,4 +32,7 @@ while ( $query->have_posts() ) {
 
 echo '</ul>';
 
+wp_enqueue_script( 'google-maps-api', 'http://maps.google.com/maps/api/js?sensor=true', null, null, true );
+wp_enqueue_script( 'gmaps', 'https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.12/gmaps.min.js', array( 'google-maps-api' ), null, true );
+
 get_footer();

@@ -10,9 +10,8 @@
 
 </div>
 
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="<?php dgob_timestamped_url( 'scripts.js' ); ?>"></script>
 <?php wp_footer(); ?>
+<script src="<?php dgob_timestamped_url( 'scripts.js' ); ?>"></script>
 
 <?php printf( '<!-- %d queries. %s seconds. -->', get_num_queries(), timer_stop() ); ?>
 
