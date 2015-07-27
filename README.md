@@ -1,2 +1,2 @@
-[![Travis CI](https://img.shields.io/travis/b263/dgob-website/wordpress.svg)](https://travis-ci.org/b263/dgob-website)
+[![Travis CI](https://img.shields.io/travis/b263/dgob-website.svg)](https://travis-ci.org/b263/dgob-website)
 [![Code Climate](https://codeclimate.com/github/b263/dgob-website/badges/gpa.svg)](https://codeclimate.com/github/b263/dgob-website)
