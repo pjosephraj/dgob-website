@@ -41,7 +41,7 @@ class MetaBox {
 		<input name="street" value="${data['street']}" class="game-evening-address" id="game-evening-street" placeholder="Straße/Hausnummer"><br>
 		<input name="zip" value="${data['zip']}" class="game-evening-address" id="game-evening-zip" placeholder="PLZ"><br>
 		<input name="city" value="${data['city']}" class="game-evening-address" id="game-evening-city" placeholder="Stadt"><br>
-		<input name="additional" value="${data['addition']}" placeholder="Adresszusatz"><br>
+		<input name="addition" value="${data['addition']}" placeholder="Adresszusatz"><br>
 		<div id="metabox-map" style="width: 100%; height: 200px; margin-top: 1em;"></div>
 		<input type="hidden" name="latitude" id="game-evening-latitude" value="${data['latitude']}">
 		<input type="hidden" name="longitude" id="game-evening-longitude" value="${data['longitude']}">
