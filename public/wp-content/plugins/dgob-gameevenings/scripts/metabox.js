@@ -42,7 +42,7 @@
 	}
 
 	function registerUpdateHandlers() {
-		$('.game-evening-address').on('keypress', debounce(geocodingRequest, 1000));
+		$('.game-evening-address').on('keypress change', debounce(geocodingRequest, 1000));
 	}
 
 	function geocodingRequest() {
