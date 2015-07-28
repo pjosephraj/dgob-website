@@ -26,8 +26,9 @@ export -f wp_validate
 find "$CODE_ROOT" \
 	-iname "*.php" \
 	| grep -v "public/wp/" \
-	| grep -v "go-baduk-weiqi" \
-	| grep -v "wp-password-policy-manager" \
+	| grep -v "plugins/go-baduk-weiqi" \
+	| grep -v "plugins/wp-password-policy-manager" \
+	| grep -v "plugins/contact-form-7" \
 	| grep -v "themes/twenty" \
 	| grep -v "vendor" \
 	| xargs -I % bash -c 'wp_validate "$@"' %

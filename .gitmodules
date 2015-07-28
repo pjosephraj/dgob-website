@@ -13,3 +13,6 @@
 [submodule "puppet/modules/webgrind"]
 	path = puppet/modules/webgrind
 	url = https://github.com/b263/puppet-webgrind.git
+[submodule "public/wp-content/plugins/contact-form-7"]
+	path = public/wp-content/plugins/contact-form-7
+	url = https://github.com/wp-plugins/contact-form-7.git
