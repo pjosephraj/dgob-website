@@ -4,6 +4,9 @@
  * Plugin Name: DGoB Spielabende
  */
 
+require_once 'classes/taxonomy/game-evenings.php';
+new Dgob\GameEvenings\Taxonomy\GameEvenings();
+
 require_once 'classes/post_type/game-evening.php';
 new Dgob\GameEvenings\PostType\GameEvening();
 
