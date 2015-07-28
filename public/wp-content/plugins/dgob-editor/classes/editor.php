@@ -40,6 +40,8 @@ class Editor {
 	 * @return string
 	 */
 	public function purify( $html ) {
+		$html = stripslashes( $html );
+
 		return $this->get_purifier()->purify( $html );
 	}
 
@@ -77,6 +79,14 @@ class Editor {
 	protected function get_config() {
 		if ( is_null( $this->config ) ) {
 			$this->config = \HTMLPurifier_Config::createDefault();
+			$this->config->set( 'HTML.Doctype', 'HTML 4.01 Transitional' );
+			$this->config->set( 'HTML.AllowedAttributes', array(
+				'a.href',
+				'a.target',
+				'img.src',
+				'*.class',
+			) );
+			$this->config->set( 'Attr.AllowedFrameTargets', array( '_blank' ) );
 		}
 
 		return $this->config;
