@@ -16,3 +16,6 @@
 [submodule "public/wp-content/plugins/contact-form-7"]
 	path = public/wp-content/plugins/contact-form-7
 	url = https://github.com/wp-plugins/contact-form-7.git
+[submodule "public/wp-content/plugins/dgob-editor/vendor/htmlpurifier"]
+	path = public/wp-content/plugins/dgob-editor/vendor/htmlpurifier
+	url = https://github.com/ezyang/htmlpurifier.git
