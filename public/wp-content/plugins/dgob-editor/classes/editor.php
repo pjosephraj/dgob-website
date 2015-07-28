@@ -50,12 +50,13 @@ class Editor {
 	 */
 	public function tinymce_config( array $config ) {
 		// Remove alignment settings
-		$config['toolbar1'] = preg_replace( '/,?align[^,]+/', '', $config['toolbar1']);
-		$config['toolbar2'] = preg_replace( '/,?align[^,]+/', '', $config['toolbar2']);
+		$config['toolbar1'] = preg_replace( '/,?align[^,]+/', '', $config['toolbar1'] );
+		$config['toolbar2'] = preg_replace( '/,?align[^,]+/', '', $config['toolbar2'] );
 		// Remove wp_more
-		$config['toolbar1'] = preg_replace( '/,?wp_more/', '', $config['toolbar1']);
+		$config['toolbar1'] = preg_replace( '/,?wp_more/', '', $config['toolbar1'] );
 		// Remove text color
-		$config['toolbar2'] = preg_replace( '/,?forecolor/', '', $config['toolbar2']);
+		$config['toolbar2'] = preg_replace( '/,?forecolor/', '', $config['toolbar2'] );
+
 		return $config;
 	}
 
