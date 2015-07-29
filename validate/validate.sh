@@ -26,6 +26,7 @@ export -f wp_validate
 find "$CODE_ROOT" \
 	-iname "*.php" \
 	| grep -v "public/wp/" \
+	| grep -v "plugins/bootstrap-3-shortcodes" \
 	| grep -v "plugins/go-baduk-weiqi" \
 	| grep -v "plugins/wp-password-policy-manager" \
 	| grep -v "plugins/contact-form-7" \
