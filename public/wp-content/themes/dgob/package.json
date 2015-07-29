@@ -16,6 +16,7 @@
     "clusterer": "bower_components/js-marker-clusterer",
     "jquery": "bower_components/jquery",
     "magnific_popup": "bower_components/magnific-popup",
+    "contact_form_7": "../../plugins/contact-form-7",
     "wgo": "../../plugins/go-baduk-weiqi/wgo"
   }
 }

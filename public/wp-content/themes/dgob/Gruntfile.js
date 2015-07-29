@@ -90,6 +90,8 @@ module.exports = function (grunt) {
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/collapse.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/dropdown.js',
 					'<%= pkg.paths.magnific_popup %>/dist/jquery.magnific-popup.js',
+					'<%= pkg.paths.contact_form_7 %>/includes/js/jquery.form.js',
+					'<%= pkg.paths.contact_form_7 %>/includes/js/scripts.js',
 					'scripts/game-evenings.js',
 					'scripts/lightbox.js',
 					'<%= pkg.paths.wgo %>/wgo/wgo.min.js',
