@@ -1,5 +1,8 @@
 <?php
 
+define( 'WP_CACHE', true );
+define( 'WPCACHEHOME', __DIR__ . '/wp-content/plugins/wp-super-cache/' );
+
 define( 'DB_NAME', 'dgob' );
 define( 'DB_USER', 'dgob' );
 define( 'DB_HOST', 'localhost' );

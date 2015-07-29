@@ -2,4 +2,6 @@
 public/wp-config-local.php
 public/wp-content/languages/*
 public/wp-content/themes/twenty*
+public/wp-content/cache/*
+!public/wp-content/cache/.htaccess
 puppet/hiera/common.yaml

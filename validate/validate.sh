@@ -29,7 +29,10 @@ find "$CODE_ROOT" \
 	| grep -v "plugins/bootstrap-3-shortcodes" \
 	| grep -v "plugins/go-baduk-weiqi" \
 	| grep -v "plugins/wp-password-policy-manager" \
+	| grep -v "plugins/wp-super-cache" \
 	| grep -v "plugins/contact-form-7" \
 	| grep -v "themes/twenty" \
 	| grep -v "vendor" \
+	| grep -v "advanced-cache.php" \
+	| grep -v "wp-cache-config" \
 	| xargs -I % bash -c 'wp_validate "$@"' %

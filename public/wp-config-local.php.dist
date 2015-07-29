@@ -2,6 +2,8 @@
 
 define( 'DB_PASSWORD', '' );
 
+define( 'DGOB_CACHE_PAGE_SECRET', 'put your unique phrase here' );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

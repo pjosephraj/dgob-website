@@ -22,3 +22,6 @@
 [submodule "public/wp-content/plugins/bootstrap-3-shortcodes"]
 	path = public/wp-content/plugins/bootstrap-3-shortcodes
 	url = https://github.com/filipstefansson/bootstrap-3-shortcodes.git
+[submodule "public/wp-content/plugins/wp-super-cache"]
+	path = public/wp-content/plugins/wp-super-cache
+	url = https://github.com/wp-plugins/wp-super-cache.git
