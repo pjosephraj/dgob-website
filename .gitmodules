@@ -19,3 +19,6 @@
 [submodule "public/wp-content/plugins/dgob-editor/vendor/htmlpurifier"]
 	path = public/wp-content/plugins/dgob-editor/vendor/htmlpurifier
 	url = https://github.com/ezyang/htmlpurifier.git
+[submodule "public/wp-content/plugins/bootstrap-3-shortcodes"]
+	path = public/wp-content/plugins/bootstrap-3-shortcodes
+	url = https://github.com/filipstefansson/bootstrap-3-shortcodes.git
