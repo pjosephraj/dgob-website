@@ -14762,12 +14762,6 @@ $(function () {
 				icon: '/wp-content/themes/dgob/images/markers/' + type + '.png',
 				infoWindow: {
 					content: $item.html()
-				},
-				click: function () {
-					if (map.map.getZoom() < 14) {
-						map.setZoom(14);
-					}
-					map.setCenter(lat, lng);
 				}
 			});
 		}
