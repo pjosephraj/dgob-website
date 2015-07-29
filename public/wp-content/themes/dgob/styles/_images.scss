@@ -1,0 +1,50 @@
+img,
+.wp-caption {
+
+	&.alignleft,
+	&.alignright,
+	&.aligncenter,
+	&.alignnone {
+		@include img-responsive;
+		margin-bottom: ($line-height-computed / 2);
+	}
+
+	@media screen and (min-width: $screen-xs-min) {
+
+		&.alignleft {
+			float: left;
+			margin-right: ($grid-gutter-width / 2);
+		}
+
+		&.alignright {
+			float: right;
+			margin-left: ($grid-gutter-width / 2);
+		}
+
+		&.aligncenter {
+			clear: both;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&.alignnone {
+			float: none;
+			clear: both;
+		}
+
+	}
+
+}
+
+.wp-caption {
+
+	img {
+		@include img-responsive;
+		margin-bottom: ($line-height-computed / 4);
+	}
+
+	.wp-caption-text {
+		font-size: $font-size-small;
+	}
+
+}

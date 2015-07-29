@@ -16,6 +16,7 @@
   ],
   "devDependencies": {
     "bootstrap-sass-official": "~3.3.5",
-    "js-marker-clusterer": "*"
+    "js-marker-clusterer": "*",
+    "magnific-popup": "~1.0.0"
   }
 }

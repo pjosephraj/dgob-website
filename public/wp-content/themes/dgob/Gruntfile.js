@@ -62,6 +62,7 @@ module.exports = function (grunt) {
 				files: {
 					'style.css': [
 						'.tmp/style.css',
+						'<%= pkg.paths.magnific_popup %>/dist/magnific-popup.css',
 						'<%= pkg.paths.wgo %>/wgo/wgo.player.css'
 					]
 				}
@@ -88,7 +89,9 @@ module.exports = function (grunt) {
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/transition.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/collapse.js',
 					'<%= pkg.paths.bootstrap %>/assets/javascripts/bootstrap/dropdown.js',
+					'<%= pkg.paths.magnific_popup %>/dist/jquery.magnific-popup.js',
 					'scripts/game-evenings.js',
+					'scripts/lightbox.js',
 					'<%= pkg.paths.wgo %>/wgo/wgo.min.js',
 					'<%= pkg.paths.wgo %>/wgo/wgo.player.min.js',
 					'<%= pkg.paths.wgo %>/i18n/i18n.de.js'
