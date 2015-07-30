@@ -10,10 +10,9 @@
 
 </div>
 
-<?php wp_footer(); ?>
 <script src="<?php dgob_timestamped_url( 'scripts.js' ); ?>"></script>
 
-<?php printf( '<!-- %d queries. %s seconds. -->', get_num_queries(), timer_stop() ); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>
