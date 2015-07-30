@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/shortcodes/info-icon.php';
+
 /**
  * Register menus
  */

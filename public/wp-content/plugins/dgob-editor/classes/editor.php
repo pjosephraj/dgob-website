@@ -87,6 +87,7 @@ class Editor {
 				'*.class',
 			) );
 			$this->config->set( 'Attr.AllowedFrameTargets', array( '_blank' ) );
+			$this->config->set( 'HTML.Allowed', 'a,abbr,acronym,b,blockquote,cite,code,dd,div,dl,dt,em,i,li,ol,p,pre,s,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul' );
 		}
 
 		return $this->config;
