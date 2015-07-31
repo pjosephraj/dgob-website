@@ -1,17 +1,14 @@
-// The following settings are required for the sticky footer.
-// See https://gist.github.com/goldsky/7322377
 html, body {
 	height: 100%;
 }
 
-#page-wrapper {
-	display: table;
-	width: 100%;
-	height: 100%;
+body {
+	display: flex;
+	flex-direction: column;
 }
 
-// Spacing before footer
 #main-content {
+	flex: 1 0 auto;
 	padding-bottom: 2em;
 	position: relative;
 }

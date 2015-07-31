@@ -1,18 +1,10 @@
 footer.page {
 
-	// For information on the sticky footer, see _page.scss
-	display: table-footer-group;
+	flex: none;
 
+	border-top: 1px solid $well-border;
 	background: $well-bg;
 	color: lighten($gray-light, 10%);
-
-	// table-footer-group can't display a border
-	.footer-line {
-		border-top: 1px solid $well-border;
-		height: 0;
-		line-height: 0;
-		font-size: 0;
-	}
 
 	a {
 		color: lighten($gray-light, 10%);

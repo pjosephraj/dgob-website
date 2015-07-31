@@ -1,5 +1,7 @@
 header.page {
 
+	flex: none;
+
 	.nav > li > a {
 		text-transform: uppercase;
 		font-weight: 600;
@@ -13,6 +15,7 @@ header.page {
 		display: inline-block;
 		padding: 0.6em 0.5em 0.3em;
 		width: 100px;
+		height: 68px;
 		background-image: url('images/logo_background.jpg');
 	}
 
