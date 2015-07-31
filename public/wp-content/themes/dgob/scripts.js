@@ -14769,9 +14769,36 @@ $(function () {
 
 });
 $(function () {
+
+	/**
+	 * Image lightbox
+	 */
 	$('a[href$=".jpg"],a[href$=".png"]').magnificPopup({
 		type: 'image'
 	});
+
+	/**
+	 * Inline lightbox
+	 */
+	$('.lightbox-inline').magnificPopup({
+		type: 'inline',
+		callbacks: {
+			open: function () {
+				redrawWgoPlayerInLightbox(this);
+			}
+		}
+	});
+
+	/**
+	 * Wgo Player can't set the correct dimensions when it initializes in hidden state.
+	 * So we need to redraw the player by calling updateDimensions().
+	 */
+	function redrawWgoPlayerInLightbox(lightbox) {
+		lightbox.content.find('.wgo-player-main').each(function () {
+			$(this).get(0)._wgo_player.updateDimensions();
+		});
+	}
+
 });
 /*! MIT license, more info: wgo.waltheri.net */(function(v,q){var m=document.getElementsByTagName("script"),g={version:"2.3.1",B:1,W:-1,ERROR_REPORT:!0,DIR:m[m.length-1].src.split("?")[0].split("/").slice(0,-1).join("/")+"/",lang:"en",i18n:{en:{}}};g.opera=-1!=navigator.userAgent.search(/(opera)(?:.*version)?[ \/]([\w.]+)/i);g.webkit=-1!=navigator.userAgent.search(/(webkit)[ \/]([\w.]+)/i);g.msie=-1!=navigator.userAgent.search(/(msie) ([\w.]+)/i);g.mozilla=-1!=navigator.userAgent.search(/(mozilla)(?:.*? rv:([\w.]+))?/i)&&!g.webkit&&!g.msie;g.t=
 function(a){var b=g.i18n[g.lang][a]||g.i18n.en[a];if(b){for(var c=1;c<arguments.length;c++)b=b.replace("$",arguments[c]);return b}return a};g.extendClass=function(a,b){b.prototype=Object.create(a.prototype);b.prototype.constructor=b;b.prototype.super=a;return b};g.abstractMethod=function(){throw Error("unimplemented abstract method");};g.clone=function(a){if(a&&"object"==typeof a){var b=a.constructor==Array?[]:{},c;for(c in a)b[c]=a[c]==a?a:g.clone(a[c]);return b}return a};g.filterHTML=function(a){return a&&

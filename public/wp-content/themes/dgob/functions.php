@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/shortcodes/info-icon.php';
+require_once __DIR__ . '/shortcodes/popup.php';
 
 /**
  * Register menus
