@@ -4,6 +4,24 @@ require_once __DIR__ . '/shortcodes/info-icon.php';
 require_once __DIR__ . '/shortcodes/popup.php';
 
 /**
+ * Paragraph handling
+ * @see shortcodes/popup.php
+ */
+remove_action( 'the_content', 'wpautop' );
+remove_action( 'the_content', 'shortcode_unautop' ); // wpautop() does its job fine when applied after shortcodes
+add_action( 'the_content', 'wpautop', 20 ); // After shortcodes
+add_action( 'the_content', function ( $content ) {
+	// wpautop() forgets the starting p tag if text follows
+	// a shortcode with only one newline, so we double it here
+	return preg_replace( "@\\]\\s*\n@", "]\n\n", $content );
+});
+add_action( 'the_content', function ( $content ) {
+	// If there's no text, it's not a paragraph.
+	return preg_replace( '@<p>[^a-z0-9]*?</p>@' , '' , $content );
+}, 100);
+
+
+/**
  * Register menus
  */
 register_nav_menu( 'primary', 'Haupt-Navigation' );
