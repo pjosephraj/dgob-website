@@ -28,7 +28,7 @@ if ( substr( $_SERVER['REMOTE_ADDR'], 0, 7 ) === '192.168' ) {
 	define( 'DGOB_PROTOCOL', 'http://' );
 } else {
 	define( 'WP_DEBUG', false );
-	define( 'DGOB_PROTOCOL', 'https://' );
+	define( 'DGOB_PROTOCOL', 'http://' );
 }
 
 require_once( __DIR__ . '/wp-config-local.php' );
