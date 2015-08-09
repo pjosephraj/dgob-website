@@ -2,6 +2,16 @@
 
 define( 'DB_PASSWORD', '' );
 
+/* Settings for SMTP:
+define( 'DGOB_SMTP', true );
+define( 'DGOB_SMTP_HOST', '' );
+define( 'DGOB_SMTP_PORT', 25 );
+define( 'DGOB_SMTP_AUTH', true );
+define( 'DGOB_SMTP_SECURE', 'tls' );
+define( 'DGOB_SMTP_USER', '' );
+define( 'DGOB_SMTP_PASS', '' );
+*/
+
 define( 'DGOB_CACHE_PAGE_SECRET', 'put your unique phrase here' );
 
 /**#@+
