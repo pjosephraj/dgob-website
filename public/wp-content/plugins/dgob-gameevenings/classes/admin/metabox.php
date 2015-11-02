@@ -90,5 +90,4 @@ EOS;
 			update_post_meta( $post_ID, '_' . $field, sanitize_text_field( $_POST[ $field ] ), false );
 		}
 	}
-
 }

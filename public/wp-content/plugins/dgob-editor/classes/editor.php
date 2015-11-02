@@ -92,5 +92,4 @@ class Editor {
 
 		return $this->config;
 	}
-
 }

@@ -13,7 +13,6 @@ class DeferredContent {
 	public static function get() {
 		return self::$content;
 	}
-
 }
 
 add_shortcode( 'popup', function ( $atts, $content ) {

@@ -49,5 +49,4 @@ class GameEvening {
 
 		register_post_type( 'game_evening', $args );
 	}
-
 }
