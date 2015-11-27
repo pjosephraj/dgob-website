@@ -96,6 +96,8 @@ apache::vhost { 'webgrind.dev':
 #####################
 # PHP               #
 #####################
+include php
+
 php::module { 'xdebug': }
 php::module { 'mysql': }
 php::module { 'gd': }
