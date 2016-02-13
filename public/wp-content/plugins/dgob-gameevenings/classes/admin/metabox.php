@@ -31,10 +31,10 @@ class MetaBox {
 	}
 
 	public function render() {
-		$postId = get_the_ID();
+		$post_id = get_the_ID();
 		$data = array();
 		foreach ( $this->fields as $field ) {
-			$data[ $field ] = get_post_meta( $postId, '_' . $field, true );
+			$data[ $field ] = get_post_meta( $post_id, '_' . $field, true );
 		}
 		wp_nonce_field( 'gameevening_save_meta_box_data', 'gameevening_meta_box_nonce' );
 		echo <<<EOS
@@ -69,7 +69,7 @@ EOS;
 		}
 	}
 
-	public function save_post( $post_ID ) {
+	public function save_post( $post_id ) {
 		if ( ! isset( $_POST['gameevening_meta_box_nonce'] ) ) {
 			return;
 		}
@@ -82,12 +82,12 @@ EOS;
 			return;
 		}
 
-		if ( ! current_user_can( 'edit_post', $post_ID ) ) {
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
 
 		foreach ( $this->fields as $field ) {
-			update_post_meta( $post_ID, '_' . $field, sanitize_text_field( $_POST[ $field ] ), false );
+			update_post_meta( $post_id, '_' . $field, sanitize_text_field( $_POST[ $field ] ), false );
 		}
 	}
 }
