@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 SCRIPT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$(cd "$(dirname "$SCRIPT_ROOT")" && pwd)"
 CODE_ROOT="${PROJECT_ROOT}/public"
@@ -10,7 +12,9 @@ if [ ! -e "$PHPCS" ]; then
 	curl -L "https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar" >"$PHPCS"
 fi
 
-if [ ! -d "$WPCS" ]; then
+if [ -d "$WPCS" ]; then
+	( cd "$WPCS" && git reset --hard && git checkout master && git pull )
+else
 	git clone -b master "https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git" "$WPCS"
 fi
 
